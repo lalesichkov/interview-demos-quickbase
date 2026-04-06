@@ -30,6 +30,11 @@ The proposed solution combines the data from the two sources by first retrieving
 and storing it in a dictionary. Then, it retrieves the population data from the `IStatService` 
 and updates the dictionary with any missing countries or population data. Finally, it returns (writes to the console) 
 the final list of dictionary entries containing the country names and their corresponding populations. 
+Structurally, the solution consists of a DBService class that captures the data retrieval logic from the 
+SQL database and a Country class to represent the country and its population data. 
+The CountryNormalizer static class is used as a helper to force unification between data sources. 
+The logic in `Program.cs` is responsible for orchestrating the data modelling and aggregation process.`
+
 
 ## Edge cases and assumptions
 - The SQL database may contain duplicate entries for a country, in which case the population data from the first entry will be used.
